@@ -76,6 +76,7 @@
             padding: 10px 20px;
             border-radius: 8px;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         nav a:hover, nav a.active {
@@ -189,8 +190,8 @@
         }
 
         .episode-item {
-            padding: 12px 15px;
-            margin-bottom: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
             background: white;
             border-radius: 8px;
             border-left: 3px solid #9b59b6;
@@ -201,9 +202,9 @@
         }
 
         .episode-item h4 {
-            font-size: 0.95em;
+            font-size: 1em;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .episode-item h4 a {
@@ -215,16 +216,25 @@
             color: #9b59b6;
         }
 
-        .episode-item p {
-            font-size: 0.85em;
-            color: #666;
-            line-height: 1.5;
+        .episode-summary {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.7;
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        .episode-summary p {
+            margin: 0;
+            white-space: pre-line;
         }
 
         .episode-date {
             font-size: 0.8em;
             color: #888;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         .podcast-badge {
@@ -284,7 +294,7 @@
             transform: scale(1.05);
         }
 
-        #loading {
+        #loading, #podcastLoading {
             text-align: center;
             padding: 40px;
             color: #888;
@@ -322,11 +332,8 @@
 
         <nav>
             <ul>
-                <li><a href="#" class="active" onclick="showTab('news')">📰 新闻简报</a></li>
-                <li><a href="#" onclick="showTab('podcasts')">🎙️ 播客精选</a></li>
-                <li><a href="#about">👤 关于我</a></li>
-                <li><a href="#projects">💼 项目</a></li>
-                <li><a href="#contact">📧 联系</a></li>
+                <li><a class="active" onclick="showTab('news')">📰 新闻简报</a></li>
+                <li><a onclick="showTab('podcasts')">🎙️ 播客精选</a></li>
             </ul>
         </nav>
 
@@ -389,7 +396,7 @@
         </div>
 
         <footer>
-            <p>由 OpenClaw 自动生成 | 每日早上 8:00 更新</p>
+            <p>由 OpenClaw 自动生成 | AI 中文总结</p>
             <p>© 2026 我的个人网站</p>
         </footer>
     </div>
@@ -420,8 +427,7 @@
                 const data = await response.json();
                 displayNews(data);
             } catch (error) {
-                const demoData = generateDemoNews();
-                displayNews(demoData);
+                content.innerHTML = '<p style="text-align:center;color:#888;">暂无新闻数据</p>';
             }
 
             loading.style.display = 'none';
@@ -438,16 +444,13 @@
             let html = '';
 
             for (const category of data.categories || []) {
-                html += `<h2 class="section-title">${category.icon} ${category.name}</h2>`;
+                html += `<h2 class="section-title">${category.icon || ''} ${category.name}</h2>`;
                 
                 for (const source of category.sources || []) {
-                    html += `<h3 style="margin: 15px 0 10px; color: #667eea;">${source.name}</h3>`;
-                    
                     for (const item of source.items || []) {
-                        const catClass = getCategoryClass(category.name);
                         html += `
                             <div class="news-item">
-                                <span class="category ${catClass}">${category.name}</span>
+                                <span class="category">${category.name}</span>
                                 <span class="news-meta">${source.name}</span>
                                 <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
                                 <p class="news-desc">${item.desc || ''}</p>
@@ -457,33 +460,7 @@
                 }
             }
 
-            content.innerHTML = html;
-        }
-
-        function getCategoryClass(name) {
-            const classes = {
-                '国际时事': 'world',
-                '科技新闻': 'tech',
-                '国内新闻': 'china',
-                '财经新闻': 'finance'
-            };
-            return classes[name] || '';
-        }
-
-        function generateDemoNews() {
-            return {
-                stats: { total: 35, sources: 7, updateTime: new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute: '2-digit'}) },
-                categories: [
-                    {
-                        name: '国际时事', icon: '🌍',
-                        sources: [{ name: '新华社国际', items: [{ title: '欧洲央行宣布下调利率', link: '#', desc: '年度第八次降息' }] }]
-                    },
-                    {
-                        name: '科技新闻', icon: '💻',
-                        sources: [{ name: '36氪', items: [{ title: '马斯克：第二代星链卫星将提供5G速度', link: '#', desc: '太空互联网升级' }] }]
-                    }
-                ]
-            };
+            content.innerHTML = html || '<p style="text-align:center;color:#888;">暂无新闻</p>';
         }
 
         // 加载播客
@@ -499,8 +476,7 @@
                 const data = await response.json();
                 displayPodcasts(data);
             } catch (error) {
-                const demoData = generateDemoPodcasts();
-                displayPodcasts(demoData);
+                content.innerHTML = '<p style="text-align:center;color:#888;">暂无播客数据</p>';
             }
 
             loading.style.display = 'none';
@@ -514,13 +490,23 @@
             document.getElementById('episodeCount').textContent = stats.totalEpisodes || 0;
             document.getElementById('podcastUpdateTime').textContent = data.date || '--';
 
-            let html = '<h2 class="section-title">🎙️ 最新播客精选</h2>';
+            let html = '<h2 class="section-title">🎙️ AI 总结 · 播客精选</h2>';
 
-            for (const podcast of data.podcasts || []) {
+            // 按分类排序，科技优先
+            const sortedPodcasts = (data.podcasts || []).sort((a, b) => {
+                if (a.category === 'tech' && b.category !== 'tech') return -1;
+                if (a.category !== 'tech' && b.category === 'tech') return 1;
+                return 0;
+            });
+
+            for (const podcast of sortedPodcasts) {
+                const categoryLabel = podcast.category === 'tech' ? '科技' : 
+                                      podcast.category === 'business' ? '商业' : podcast.category;
+                
                 html += `
                     <div class="podcast-card">
                         <div class="podcast-header">
-                            <h3>${podcast.name} <span class="podcast-badge">${podcast.category}</span></h3>
+                            <h3>${podcast.name} <span class="podcast-badge">${categoryLabel}</span></h3>
                             <p>${podcast.description || ''}</p>
                         </div>
                         <div class="episode-list">
@@ -528,11 +514,15 @@
                 
                 for (const ep of podcast.episodes || []) {
                     const pubDate = ep.pubDate ? new Date(ep.pubDate).toLocaleDateString('zh-CN') : '';
+                    const hasLink = ep.link && ep.link.startsWith('http');
+                    
                     html += `
                         <div class="episode-item">
-                            <h4><a href="${ep.link}" target="_blank">${ep.title}</a></h4>
-                            <p>${ep.description ? ep.description.substring(0, 150) + '...' : ''}</p>
-                            <div class="episode-date">📅 ${pubDate}</div>
+                            <h4>${hasLink ? `<a href="${ep.link}" target="_blank">${ep.title}</a>` : ep.title}</h4>
+                            <div class="episode-summary">
+                                <p>${ep.summary || '暂无摘要'}</p>
+                            </div>
+                            ${pubDate ? `<div class="episode-date">📅 ${pubDate}</div>` : ''}
                         </div>
                     `;
                 }
@@ -540,27 +530,10 @@
                 html += `</div></div>`;
             }
 
-            content.innerHTML = html;
+            content.innerHTML = html || '<p style="text-align:center;color:#888;">暂无播客</p>';
         }
 
-        function generateDemoPodcasts() {
-            return {
-                date: new Date().toISOString().split('T')[0],
-                podcasts: [
-                    {
-                        name: 'Lex Fridman Podcast',
-                        category: '科技',
-                        description: 'AI、科技、哲学深度对谈',
-                        episodes: [
-                            { title: '最新一期即将加载...', link: '#', pubDate: new Date().toISOString() }
-                        ]
-                    }
-                ],
-                stats: { totalPodcasts: 1, totalEpisodes: 1 }
-            };
-        }
-
-        // 页面加载
+        // 页面加载时加载当前 tab
         loadNews();
     </script>
 </body>
