@@ -1,0 +1,12 @@
+# OpenClaw internal
+.openclaw/
+
+# Logs
+*.log
+*.pid
+
+# Build outputs
+build/
+
+# Private data (contains keys, tokens, etc)
+# Add any sensitive files here
