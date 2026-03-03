@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站 | 新闻简报</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .content {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .news-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s;
+        }
+
+        .news-item:hover {
+            transform: translateX(5px);
+        }
+
+        .news-item h3 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .news-item a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+
+        .news-meta {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .news-desc {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .category {
+            display: inline-block;
+            padding: 3px 10px;
+            background: #667eea;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 10px;
+        }
+
+        .category.tech { background: #28a745; }
+        .category.world { background: #dc3545; }
+        .category.china { background: #fd7e14; }
+        .category.finance { background: #17a2b8; }
+
+        .update-time {
+            text-align: center;
+            color: #888;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.05);
+        }
+
+        #loading {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            nav ul { flex-direction: column; gap: 10px; }
+            .container { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="avatar">👤</div>
+            <h1>我的个人网站</h1>
+            <p class="subtitle">每日新闻简报 | 聚焦天下事</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#news">📰 新闻简报</a></li>
+                <li><a href="#about">👤 关于我</a></li>
+                <li><a href="#projects">💼 项目</a></li>
+                <li><a href="#contact">📧 联系</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <button class="refresh-btn" onclick="loadNews()">🔄 刷新新闻</button>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3 id="newsCount">0</h3>
+                    <p>新闻总数</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="sourcesCount">0</h3>
+                    <p>新闻来源</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="updateTime">--</h3>
+                    <p>更新时间</p>
+                </div>
+            </div>
+
+            <div id="loading">
+                <div class="spinner"></div>
+                <p>正在加载新闻...</p>
+            </div>
+
+            <div id="newsContent"></div>
+        </main>
+
+        <footer>
+            <p>由 OpenClaw 自动生成 | 每日早上 8:00 更新</p>
+            <p>© 2026 我的个人网站</p>
+        </footer>
+    </div>
+
+    <script>
+        async function loadNews() {
+            const loading = document.getElementById('loading');
+            const content = document.getElementById('newsContent');
+            
+            loading.style.display = 'block';
+            content.innerHTML = '';
+
+            try {
+                // 尝试加载本地新闻数据
+                const response = await fetch('news-data.json');
+                const data = await response.json();
+                
+                displayNews(data);
+            } catch (error) {
+                // 使用演示数据
+                const demoData = generateDemoData();
+                displayNews(demoData);
+            }
+
+            loading.style.display = 'none';
+        }
+
+        function displayNews(data) {
+            const content = document.getElementById('newsContent');
+            const stats = data.stats || {};
+            
+            document.getElementById('newsCount').textContent = stats.total || 0;
+            document.getElementById('sourcesCount').textContent = stats.sources || 0;
+            document.getElementById('updateTime').textContent = stats.updateTime || '--';
+
+            let html = '';
+
+            for (const category of data.categories || []) {
+                html += `<h2 class="section-title">${category.icon} ${category.name}</h2>`;
+                
+                for (const source of category.sources || []) {
+                    html += `<h3 style="margin: 15px 0 10px; color: #667eea;">${source.name}</h3>`;
+                    
+                    for (const item of source.items || []) {
+                        const catClass = getCategoryClass(category.name);
+                        html += `
+                            <div class="news-item">
+                                <span class="category ${catClass}">${category.name}</span>
+                                <span class="news-meta">${source.name}</span>
+                                <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                                <p class="news-desc">${item.desc || ''}</p>
+                            </div>
+                        `;
+                    }
+                }
+            }
+
+            content.innerHTML = html;
+        }
+
+        function getCategoryClass(name) {
+            const classes = {
+                '国际时事': 'world',
+                '科技新闻': 'tech',
+                '国内新闻': 'china',
+                '财经新闻': 'finance'
+            };
+            return classes[name] || '';
+        }
+
+        function generateDemoData() {
+            return {
+                stats: {
+                    total: 35,
+                    sources: 7,
+                    updateTime: new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute: '2-digit'})
+                },
+                categories: [
+                    {
+                        name: '国际时事',
+                        icon: '🌍',
+                        sources: [
+                            {
+                                name: '新华社国际',
+                                items: [
+                                    { title: '欧洲央行宣布下调欧元区关键利率', link: '#', desc: '一年内第八次降息' },
+                                    { title: '美联储：美国经济不确定性居高位', link: '#', desc: '关税推高物价' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: '科技新闻',
+                        icon: '💻',
+                        sources: [
+                            {
+                                name: '36氪',
+                                items: [
+                                    { title: '马斯克：第二代星链卫星将提供5G速度', link: '#', desc: '太空互联网服务升级' },
+                                    { title: '科大讯飞 AI 眼镜亮相', link: '#', desc: '支持多模态同传翻译，仅重40克' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            };
+        }
+
+        // 页面加载时自动加载新闻
+        loadNews();
+
+        // 每 5 分钟自动刷新
+        setInterval(loadNews, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
