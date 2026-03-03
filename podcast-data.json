@@ -1,0 +1,48 @@
+{
+  "date": "2026-03-03",
+  "generatedAt": "2026-03-03T01:45:27.133Z",
+  "podcasts": [
+    {
+      "name": "Lex Fridman Podcast",
+      "category": "tech",
+      "description": "AI、科技、哲学深度对谈",
+      "episodes": [
+        {
+          "title": "Lex Fridman Podcast",
+          "description": "",
+          "pubDate": "",
+          "link": "https://lexfridman.com/podcast/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=podcast"
+        }
+      ]
+    },
+    {
+      "name": "Planet Money",
+      "category": "business",
+      "description": "经济学故事",
+      "episodes": [
+        {
+          "title": "Don't hate the replicator, hate the game",
+          "description": "The world of science has been stuck in an existential crisis over whether we actually know the things we thought we knew. Re-running an old study today doesn't always yield the same result. Same with re-enacting old experiments. Collectively, this is known as the “replication crisis.” Economist Abel Brodeur has come up with one way to help fix this crisis: he’s invented an internationally crowdsourced surveillance system, designed to keep social scientists honest. He calls it the “Replication Ga",
+          "pubDate": "Fri, 27 Feb 2026 22:05:00 +0000",
+          "link": "https://www.npr.org/2026/02/27/nx-s1-5720653/replication-crisis-games-abel-brodeur"
+        },
+        {
+          "title": "The ICE hiring boom",
+          "description": "Live event info and tickets here. ICE is scaling up, with rapid new hiring. So we ask, has training new officers changed? At what cost? Also, the Trump administration has plans to pour billions of dollars into warehouses for mass immigrant detention centers, which can totally change the economy of some areas. We hear from a rural town in Georgia that wants an ICE facility in its own backyard. These episodes were originally published on Planet Money’s sister daily podcast The Indicator.Pre-order ",
+          "pubDate": "Wed, 25 Feb 2026 08:00:00 +0000",
+          "link": "https://www.npr.org/2026/02/25/nx-s1-5725491/ice-recruiting-hiring-detention-centers"
+        },
+        {
+          "title": "The Supreme Court struck down a bunch of Trump's tariffs. Now what?",
+          "description": "Live event info and tickets here.The Supreme Court has spoken. Those big, sweeping tariffs that President Trump imposed early last year? They’re illegal. On today’s show: Why were those tariffs struck down? Will anyone get refunds? And …what about this new 10 percent tariff the President just announced today? Plus — a growing market for tariff refunds.Further Listening: - Worst. Tariffs. Ever.  - Tariffs: What are they good for?  - What \"Made in China\" actually means - The 145% tariff already di",
+          "pubDate": "Sat, 21 Feb 2026 06:09:00 +0000",
+          "link": "https://www.npr.org/2026/02/21/nx-s1-5721118/supreme-court-justices-ruling-trump-tariffs-section-122"
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalPodcasts": 2,
+    "totalEpisodes": 4
+  }
+}
