@@ -1,118 +1,141 @@
 {
   "date": "2026-03-03",
-  "generatedAt": "2026-03-03T01:55:59.935Z",
-  "podcasts": [
+  "generatedAt": "2026-03-03T04:23:46.192Z",
+  "categories": [
     {
-      "name": "Lex Fridman Podcast",
-      "category": "tech",
-      "description": "AI、科技、哲学深度对谈",
-      "episodes": [
+      "key": "top-tech",
+      "name": "顶级科技对谈",
+      "icon": "🏆",
+      "podcasts": [
         {
-          "title": "Lex Fridman Podcast",
-          "summary": "• 暂无详细摘要",
-          "pubDate": "",
-          "link": "https://lexfridman.com/podcast/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=podcast"
+          "name": "Lex Fridman Podcast",
+          "name_cn": "莱克斯·弗里德曼播客",
+          "host": "Lex Fridman（MIT AI研究员）",
+          "platforms": [
+            "YouTube",
+            "Spotify",
+            "Apple Podcasts"
+          ],
+          "episodes": [
+            {
+              "title": "Lex Fridman Podcast",
+              "summary": "• 暂无详细摘要，请访问原链接了解更多",
+              "pubDate": "",
+              "pubDateFormatted": "",
+              "link": "https://lexfridman.com/podcast/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=podcast",
+              "duration": ""
+            }
+          ]
         }
       ]
     },
     {
-      "name": "The Changelog",
-      "category": "tech",
-      "description": "开源软件故事",
-      "episodes": [
+      "key": "other-tech",
+      "name": "其他科技对谈",
+      "icon": "🎧",
+      "podcasts": [
         {
-          "title": "Finale &amp; Friends (Friends)",
-          "summary": "• Adam and Jerod get into the news, Jerod officially retires from the pod (and Changelog), plus a bonus for our Changelog++ subs\n• Join the discussion Changelog++ members get a bonus 16 minutes at the end of this episode and zero ads\n• Sponsors: Augment Code – Adam loves “Auggie” – Augment Code’s CLI that brings Augment’s context engine and powerful AI reasoning anywhere your code go",
-          "pubDate": "Mon, 02 Mar 2026 21:00:00 +0000",
-          "link": "https://changelog.com/friends/129"
+          "name": "The Vergecast",
+          "name_cn": "边缘播客",
+          "host": "The Verge编辑团队",
+          "platforms": [
+            "Apple Podcasts",
+            "Spotify"
+          ],
+          "episodes": [
+            {
+              "title": "The Galaxy S26 is a photography nightmare",
+              "summary": "• Samsung just launched its newest phones, the Galaxy S26 lineup, and wow is it full of Vergecast stories\n• There’s the very cool new Privacy Display, which seems genuinely useful; there’s the AI-powered camera, which seems like\n• After talking through all the new stuff, Nilay and David discuss the recent executive shakeup at Xbox, and try to figure\n• Finally, in the lightning round, it’s time for Brendan Carr is a dummy, some truly remarkable charts, and much more",
+              "pubDate": "Fri, 27 Feb 2026 10:00:00 -0000",
+              "pubDateFormatted": "2026年2月27日",
+              "link": "https://www.podtrac.com/pts/redirect.mp3/pdst.fm/e/pscrb.fm/rss/p/traffic.megaphone.fm/VMP9138190302.mp3?updated=1772156252",
+              "duration": "5759"
+            }
+          ]
         },
         {
-          "title": "Opus 4.5 changed everything (Interview)",
-          "summary": "• Burke Holland works on GitHub Copilot by day and codes with his AI agents always\n• Early January, Burke posted about how Opus 4\n• We were all still buzzing from the holiday-season 2x usage bump Claude gave us, and Opus 4",
-          "pubDate": "Fri, 27 Feb 2026 22:00:00 +0000",
-          "link": "https://changelog.com/podcast/678"
-        }
-      ]
-    },
-    {
-      "name": "This Week in Tech (TWiT)",
-      "category": "tech",
-      "description": "每周科技新闻综述",
-      "episodes": [
-        {
-          "title": "TWiT 1073: Broetry in Motion - Anthropic Stands Up to The Pentagon",
-          "summary": "• Anthropic's clash with the Pentagon pits tech ethics against government demands, raising explosive questions about AI's role in surveillance and weapo\n• If you care about who controls the future of artificial intelligence, this episode is a must-listen\n• Sam Altman says OpenAI shares Anthropic's red lines in Pentagon fight The whole thing was a scam OpenAI allows NSA to use GPT for surveilling American",
-          "pubDate": "Sun, 01 Mar 2026 17:26:49 PST",
-          "link": "https://twit.tv/shows/this-week-in-tech/episodes/1073"
+          "name": "This Week in Tech (TWiT)",
+          "name_cn": "本周科技",
+          "host": "Leo Laporte及科技记者团队",
+          "platforms": [
+            "YouTube",
+            "Apple Podcasts",
+            "Spotify"
+          ],
+          "episodes": [
+            {
+              "title": "TWiT 1073: Broetry in Motion - Anthropic Stands Up to The Pentagon",
+              "summary": "• Anthropic's clash with the Pentagon pits tech ethics against government demands, raising explosive questions about AI's \n• If you care about who controls the future of artificial intelligence, this episode is a must-listen\n• Sam Altman says OpenAI shares Anthropic's red lines in Pentagon fight The whole thing was a scam OpenAI allows NSA to us\n• 1 on Apple's top free apps list after Pentagon rejection Layoffs at Block Crypto exchange Gemini plans to lay off up to ",
+              "pubDate": "Sun, 01 Mar 2026 17:26:49 PST",
+              "pubDateFormatted": "2026年3月2日",
+              "link": "https://pdst.fm/e/pscrb.fm/rss/p/mgln.ai/e/294/cdn.twit.tv/megaphone/twit_1073/ARML3876665131.mp3",
+              "duration": "0:00"
+            }
+          ]
         },
         {
-          "title": "TWiT 1072: The Devil's Advocate - Jailbreaking Fighter Jets, Social Media Addiction, and Self-Driving Snafus",
-          "summary": "• What do jailbreaking fighter jets, lost Amazon vans, and swapping your phone's smart features for a handful of mud have in common\n• TWiT dives into the wild, occasionally absurd future of tech, where yesterday's sci-fi is tomorrow's supply-chain headache\n• Mark Zuckerberg and his Ray-Ban entourage have their day in court Instagram Boss Says 16 Hours of Daily Use Is Not Addiction Meta Begins $65 Million E",
-          "pubDate": "Sun, 22 Feb 2026 20:40:00 PST",
-          "link": "https://twit.tv/shows/this-week-in-tech/episodes/1072"
-        }
-      ]
-    },
-    {
-      "name": "Planet Money",
-      "category": "business",
-      "description": "经济学故事",
-      "episodes": [
-        {
-          "title": "Don't hate the replicator, hate the game",
-          "summary": "• The world of science has been stuck in an existential crisis over whether we actually know the things we thought we knew\n• Re-running an old study today doesn't always yield the same result\n• Same with re-enacting old experiments",
-          "pubDate": "Fri, 27 Feb 2026 22:05:00 +0000",
-          "link": "https://www.npr.org/2026/02/27/nx-s1-5720653/replication-crisis-games-abel-brodeur"
+          "name": "The Changelog",
+          "name_cn": "更新日志",
+          "host": "Adam Stacoviak、Jerod Santo",
+          "platforms": [
+            "Apple Podcasts",
+            "Spotify"
+          ],
+          "episodes": [
+            {
+              "title": "Finale &amp; Friends (Friends)",
+              "summary": "• Adam and Jerod get into the news, Jerod officially retires from the pod (and Changelog), plus a bonus for our Changelog+\n• Join the discussion Changelog++ members get a bonus 16 minutes at the end of this episode and zero ads\n• Sponsors: Augment Code – Adam loves “Auggie” – Augment Code’s CLI that brings Augment’s context engine and powerful AI r\n• From building alongside you in the terminal to any part of your development workflow",
+              "pubDate": "Mon, 02 Mar 2026 21:00:00 +0000",
+              "pubDateFormatted": "2026年3月3日",
+              "link": "https://op3.dev/e/https://pscrb.fm/rss/p/https://cdn.changelog.com/uploads/friends/129/changelog--friends-129.mp3",
+              "duration": "1:46:22"
+            }
+          ]
         },
         {
-          "title": "The ICE hiring boom",
-          "summary": "• Live event info and tickets here\n• ICE is scaling up, with rapid new hiring\n• So we ask, has training new officers changed",
-          "pubDate": "Wed, 25 Feb 2026 08:00:00 +0000",
-          "link": "https://www.npr.org/2026/02/25/nx-s1-5725491/ice-recruiting-hiring-detention-centers"
-        }
-      ]
-    },
-    {
-      "name": "The Vergecast",
-      "category": "tech",
-      "description": "科技新闻深度解读",
-      "episodes": [
-        {
-          "title": "The Galaxy S26 is a photography nightmare",
-          "summary": "• Samsung just launched its newest phones, the Galaxy S26 lineup, and wow is it full of Vergecast stories\n• There’s the very cool new Privacy Display, which seems genuinely useful; there’s the AI-powered camera, which seems like a disaster waiting to happen;\n• After talking through all the new stuff, Nilay and David discuss the recent executive shakeup at Xbox, and try to figure out why Microsoft just can’t ",
-          "pubDate": "Fri, 27 Feb 2026 10:00:00 -0000",
-          "link": ""
+          "name": "Software Engineering Daily",
+          "name_cn": "软件工程日报",
+          "host": "Jeff Meyerson",
+          "platforms": [
+            "Apple Podcasts",
+            "Spotify"
+          ],
+          "episodes": [
+            {
+              "title": "Amazon’s IDE for Spec-Driven Development with David Yanacek",
+              "summary": "• AI-assisted coding tools have made it easier than ever to spin up prototypes, but turning those prototypes into reliable\n• Large language models are non-deterministic, prone to drift, and often lose track of intent over long development sessio\n• Kiro is an AI-powered IDE that&#8217;s built around a spec-driven development workflow\n• It&#8217;s focused on helping developers capture intent up front, translate it into concrete requirements and designs, a",
+              "pubDate": "Thu, 26 Feb 2026 10:00:14 +0000",
+              "pubDateFormatted": "2026年2月26日",
+              "link": "https://traffic.megaphone.fm/SED1637876991.mp3",
+              "duration": "57:00"
+            }
+          ]
         },
         {
-          "title": "How Claude Code Claude Codes",
-          "summary": "• Few AI products have found the kind of product-market fit we’ve seen from Claude Code\n• On the eve of the product’s first anniversary, Anthropic’s Boris Cherny explains why Claude Code is so powerful, all the work left to do, and why he n\n• After that, The Verge’s Hayden Field joins the show to talk about how we should think about giving our data (and our computers) to AI, even when it se",
-          "pubDate": "Tue, 24 Feb 2026 10:00:00 -0000",
-          "link": ""
-        }
-      ]
-    },
-    {
-      "name": "Software Engineering Daily",
-      "category": "tech",
-      "description": "软件工程深度访谈",
-      "episodes": [
-        {
-          "title": "Amazon’s IDE for Spec-Driven Development with David Yanacek",
-          "summary": "• AI-assisted coding tools have made it easier than ever to spin up prototypes, but turning those prototypes into reliable, production-grade systems rem\n• Large language models are non-deterministic, prone to drift, and often lose track of intent over long development sessions\n• Kiro is an AI-powered IDE that&#8217;s built around a spec-driven development workflow",
-          "pubDate": "Thu, 26 Feb 2026 10:00:14 +0000",
-          "link": "https://softwareengineeringdaily.com/2026/02/26/amazons-ide-for-spec-driven-development-with-david-yanacek/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=amazons-ide-for-spec-driven-development-with-david-yanacek"
-        },
-        {
-          "title": "Engineering AI Systems for Autonomy and Resilience with Krishna Sai",
-          "summary": "• Enterprise IT systems have grown into sprawling, highly distributed environments spanning cloud infrastructure, applications, data platforms, and incr\n• Observability tools have made it easier to collect metrics, logs, and traces, but understanding why systems fail and responding quickly remains a pers\n• As complexity continues to rise, the industry is looking beyond dashboards and alerts toward agentic AI systems that can reason about operational data",
-          "pubDate": "Tue, 24 Feb 2026 10:00:39 +0000",
-          "link": "https://softwareengineeringdaily.com/2026/02/24/engineering-ai-systems-for-autonomy-and-resilience-with-krishna-sai/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=engineering-ai-systems-for-autonomy-and-resilience-with-krishna-sai"
+          "name": "Planet Money",
+          "name_cn": "金钱星球",
+          "host": "NPR团队",
+          "platforms": [
+            "Apple Podcasts",
+            "Spotify"
+          ],
+          "episodes": [
+            {
+              "title": "Don't hate the replicator, hate the game",
+              "summary": "• The world of science has been stuck in an existential crisis over whether we actually know the things we thought we knew\n• Re-running an old study today doesn't always yield the same result\n• Same with re-enacting old experiments\n• Collectively, this is known as the “replication crisis",
+              "pubDate": "Fri, 27 Feb 2026 22:05:00 +0000",
+              "pubDateFormatted": "2026年2月28日",
+              "link": "https://tracking.swap.fm/track/XvDEoI11TR00olTUO8US/prfx.byspotify.com/e/play.podtrac.com/npr-510289/traffic.megaphone.fm/NPR3715588590.mp3?t=podcast&amp;e=nx-s1-5720653&amp;p=510289&amp;d=2164&amp;size=34627170",
+              "duration": "2164"
+            }
+          ]
         }
       ]
     }
   ],
   "stats": {
+    "totalCategories": 2,
     "totalPodcasts": 6,
-    "totalEpisodes": 11
+    "totalEpisodes": 6
   }
 }
